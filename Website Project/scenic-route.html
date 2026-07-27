@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yerp</title>
+        <link rel="stylesheet" href="style-home.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <section>
+            <header>
+                <nav class="navbar">
+                <img src="images/141791.jpg" alt="Logo" class="logo">
+                <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="visit.html">Visit Us</a></li>
+                <li><a href="scenic-route.html">Scenic Route</a></li>
+                </ul>
+                </nav>
+            </header>
+        </section>
+        <h1 class="map-title">Map of Dyker Heights</h1>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <div style="display: flex; justify-content: center; width: 100%;">
+  <div id="map" style="width: 100%; max-width: 800px; height: 450px;"></div>
+</div>
+<script>
+  const map = L.map('map').setView([40.6169245, -74.015956], 17); 
+  // [latitude, longitude], zoom level
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const emojiIcon = L.divIcon({
+html: '<div style="font-size: 20px; line-height: 1; display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">🎄</div>',
+  className: 'origin', 
+  iconSize: [50, 50],
+  iconAnchor: [25, 25] // bottom-center of the emoji points to the exact coordinate
+});
+
+    L.marker([40.6169245, -74.015956], { icon: emojiIcon }).addTo(map)
+    .bindPopup("Lucy Spata's House")
+    .openPopup();
+    
+const emojiIcon2 = L.divIcon({
+  html: '<div style="font-size: 20px; line-height: 1; display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">☕</div>',
+  className: '',
+  iconSize: [50, 50],
+  iconAnchor: [25, 25]
+});
+
+L.marker([40.6171192, -74.0153601], { icon: emojiIcon2 }).addTo(map)
+  .bindPopup("Penguin's Hot Cocoa")
+  .openPopup();
+</script>
+
+        <footer class="site-footer">
+            <p>&copy; 2025-2026 Dyker Heights Christmas Lights. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
